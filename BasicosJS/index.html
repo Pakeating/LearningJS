@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        ///////////////variables
         console.log('hola mundo');
         var resta=15-5;//comentario
         console.log(resta);
@@ -14,9 +15,83 @@
         console.log(multiplicacion);
         var division=20/3;
         console.log(division);
-        var decimal=25.1;
-        let otraVariable='hola';
+        var decimal=2.1;
+        let otraVariable='hola'; //limita mas el ambito de la variable
         console.log(otraVariable);
+        console.log(typeof otraVariable);//nos da el tipo de dato actual de la variable
+        console.log(typeof division); //nos devuelve el tipo number, que es un dato de 64 bits que agrupa todos los numeros
+        let booleano=true;
+        console.log(typeof booleano);
+        const CONSTANTE='Soy una Constante';
+        //CONSTANTE=9;//salta el error al correr el codigo, por ser lenguaje interpretado
+        booleano=null;
+        console.log(decimal+booleano); //WTF, esto no dara error aun siendo nulo el bool.
+        //siendo true sumara 1 y siendo false 0
+        booleano=undefined; //undefined tambien se considera un tipo primitivo.
+        
+        //////////////////////////condicional
+        if(decimal==25.1){  //podemos compararlo con null o undefined
+            console.log('cumple')
+        }else if(decimal>25.1){
+            console.log('es mayor')
+        }else{
+            console.log('es mayor')
+        }
+        ////////////////////////funciones
+        function miFuncion(){
+            return 'funcion'
+        }
+        console.log(miFuncion())//podemos incluso llamar a la funcion antes de definirla
+
+        ////////////////////////listas
+
+        let lista=['hola','adios',5, 3.4] //podemos combinar tipos de datos dentro de la lista
+        console.log(lista)
+        console.log(lista[2])
+
+        let set=new Set(['hola','adios',5, 3.4, 'hola'])//al ser una lista de tipo set, no admite repetidos
+        console.log(set);
+
+        let map= new Map([['hola',2],['adios', 43],[2,5]])
+        map.set('buena tarde', 32)
+        console.log(map)
+        console.log(map.get('buena tarde'))
+
+        /////////////////////bucles
+        for(const value of lista){
+            console.log(value)
+        }
+        let contador=0
+        while(contador<lista.length){
+            console.log(lista[contador])
+            contador++
+        }
+        
+        /////////////////////////clases
+
+        class Clase{
+            constructor(nombre, edad){
+                this.nombre=nombre
+                this.edad=edad
+            }
+        }
+        let miClase= new Clase('paco',30)
+        console.log(miClase)
+        console.log(miClase.nombre)
+
+        ///////////////enumeraciones
+        const Enum={
+            HOLA:'hola', 
+            ADIOS:'adios', 
+            HASTA_LUEGO:'hasta luego'
+        }
+        const miEnum=Enum.HASTA_LUEGO
+        console.log(miEnum)
+
+
+        
+
+
 
 
     </script>
