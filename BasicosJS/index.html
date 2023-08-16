@@ -7,9 +7,11 @@
 </head>
 <body>
     <script>
+
         ///////////////variables
+
         console.log('hola mundo');
-        var resta=15-5;//comentario
+        var resta=15-5;//las operacioens aritmeticas basicas se pueden acortar con +=, -=, *= y /=
         console.log(resta);
         var multiplicacion=12*3;
         console.log(multiplicacion);
@@ -29,6 +31,15 @@
         //siendo true sumara 1 y siendo false 0
         booleano=undefined; //undefined tambien se considera un tipo primitivo.
         
+        //////////////////////////strings
+        let string='cadena con "comillas"'
+        console.log(string)
+        string="cadena con 'comillas'"
+        console.log(string) // si queremos escribir caracteres especiales usaremos las secuencias de escape como \n y \r
+        console.log(string+CONSTANTE) // se concatenan cadenas con +
+        console.log(string.length)
+        console.log(string[3]) //el primer caracter es 0. Las cadenas de caracteres son inmutables, no puede cambiarse un caracter individual
+        
         //////////////////////////condicional
         if(decimal==25.1){  //podemos compararlo con null o undefined
             console.log('cumple')
@@ -38,6 +49,7 @@
             console.log('es mayor')
         }
         ////////////////////////funciones
+
         function miFuncion(){
             return 'funcion'
         }
@@ -58,6 +70,7 @@
         console.log(map.get('buena tarde'))
 
         /////////////////////bucles
+
         for(const value of lista){
             console.log(value)
         }
@@ -80,6 +93,7 @@
         console.log(miClase.nombre)
 
         ///////////////enumeraciones
+
         const Enum={
             HOLA:'hola', 
             ADIOS:'adios', 
