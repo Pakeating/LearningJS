@@ -115,9 +115,27 @@
                 this.edad=edad
             }
         }
-        let miClase= new Clase('paco',30)
-        console.log(miClase)
-        console.log(miClase.nombre)
+        let miObjeto= new Clase('paco',30)
+        console.log(miObjeto)
+        console.log(miObjeto.nombre)
+
+        ////////////////////////objetos
+
+        var perro={     //pueden crearse objetos sin clase
+            'nombre':'pepe',
+            'edad':4,
+            'peso':6,
+            'raza del perro':'pastor aleman'//cuando el nombre del atributo tenga espacios se debe acceder mediante la notacion de corchetes
+        }
+        console.log(perro.nombre)
+        console.log(perro['raza del perro']) //podemos usar una variable dentro cuando usamos notacion de corchetes
+        perro.edad=5
+        console.log(perro.edad)
+        perro.altura=40         //acabamos de crear un nuevo atributo para perro
+        console.log(perro)
+        delete perro.altura     //eliminamos el atributo
+        console.log(perro)
+        console.log(perro.hasOwnProperty('edad'))   //comprobamos si existe el atributo
 
         ///////////////enumeraciones
 
