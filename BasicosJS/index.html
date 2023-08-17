@@ -48,6 +48,27 @@
         }else{
             console.log('es mayor')
         }
+        let valor;
+        switch(valor){
+            case 1:
+                console.log('es 1')
+                break
+            case 2:
+                console.log('es 2')
+                break
+            case 3:
+            case 4: 
+            case 5: 
+                console.log('es entre 3 y 5') 
+                break
+            case undefined:
+                console.log('no esta definido!')
+                break
+            default: 
+                console.log('no es ninguna de las anteriores')
+                break 
+        }
+
         ////////////////////////funciones
 
         function miFuncion(){
@@ -57,9 +78,15 @@
 
         ////////////////////////listas
 
-        let lista=['hola','adios',5, 3.4] //podemos combinar tipos de datos dentro de la lista
+        let lista=['hola','adios',5, 3.4] //podemos combinar tipos de datos dentro de la lista, incluso otros arrays/listas
         console.log(lista)
-        console.log(lista[2])
+        console.log(lista[2])   //si tuviesemos un array dentro de otro accederiamos con varios [][] en el orden necesario
+        lista.push('annadido') //push() anade un elemento al final del array
+        console.log(lista)
+        elementoEliminado=lista.pop()  //pop() borra el ultimo elemento del array, podemos asignarselo a auna variable
+        console.log(lista)
+        lista.shift()           //shift() elimina el primer elemento
+        lista.unshift('hola')   // anade el elemento alprincipio del array
 
         let set=new Set(['hola','adios',5, 3.4, 'hola'])//al ser una lista de tipo set, no admite repetidos
         console.log(set);
