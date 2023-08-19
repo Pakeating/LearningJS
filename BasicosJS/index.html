@@ -84,8 +84,16 @@
         const sumarTres=(x)=>x+3
         console.log(sumarTres(4))
         const imprimir=(x)=>console.log(x)
-        imprimir('soy una lambda')
-        
+        imprimir('soy una lambda')      
+        const sumar=(a,b=1)=>{let num=6; return a+b+num}  //en caso de que la lambda tenga variaas lineas hay que mantener las llaves
+        console.log(sumar(3,5))     //si no ponemos el segundo parametro, tomara el indicado por defecto, 1. Esto vale para cualquier funcion
+
+        function funct(...args){        //Operador rest, nos permite poner un numero indeterminado de argumentos
+            console.log(args.length)    //Convertir'a todos los argumentos en un array, que podra ser accedido desde la funcion
+        }
+        funct(1,2,45,67)    //se puede utilizar ... tambien como operador spread, que hace el proceso contrario, convierte un array a parametros individuales
+
+
         ////////////////////////listas
 
         let lista=['hola','adios',5, 3.4] //podemos combinar tipos de datos dentro de la lista, incluso otros arrays/listas
@@ -127,10 +135,17 @@
         /////////////////////////clases
 
         class Clase{
+            
             constructor(nombre, edad){
-                this.nombre=nombre
-                this.edad=edad
+                this._nombre=nombre
+                this._edad=edad
             }
+            get nombre(){               //getter. JS no encapsula igual, se escriben los atributos con _ delante para indicar que no se debe modificar.
+                return this._nombre     //por ello en el getter solo cambiamos la variable a la nombrada con _
+            }
+
+
+
         }
         let miObjeto= new Clase('paco',30)
         console.log(miObjeto)
@@ -142,7 +157,8 @@
             'nombre':'pepe',
             'edad':4,
             'peso':6,
-            'raza del perro':'pastor aleman'//cuando el nombre del atributo tenga espacios se debe acceder mediante la notacion de corchetes
+            'raza del perro':'pastor aleman',//cuando el nombre del atributo tenga espacios se debe acceder mediante la notacion de corchetes
+            ladrar:function(){console.log('guau, guau!')}   //metodo del objeto
         }
         console.log(perro.nombre)
         console.log(perro['raza del perro']) //podemos usar una variable dentro cuando usamos notacion de corchetes
@@ -154,6 +170,24 @@
         console.log(perro)
         console.log(perro.hasOwnProperty('edad'))   //comprobamos si existe el atributo
         Object.freeze(perro)    //congela el objeto evitando poder modificar cualquier atributo del objeto
+        const {nombre, edad, peso, raza}=perro; //otra forma de extraer las variables del objeto en una sola linea, sin tener que llamarlos individualmente
+        console.log(nombre) 
+        console.log(edad)
+        console.log(peso)
+        console.log(raza)       //undefined, la variable que pasamos debe llamarse igual al atributo
+        perro.ladrar()
+
+        const usuario={         //ahora haremos lo mismo pero con un objeto con un atributo que es un objeto a su vez
+            numUsuario:3,       //a esto se le llama sintaxis de desestructuracion
+            john:{
+                'edadUsuario':27,
+                'correo': 'adfgadfg@gmail'
+            }
+        }
+        const{numUsuario, john:{edadUsuario:edadUsuario,correo: correoUsuario}}=usuario
+        console.log(numUsuario,edadUsuario,correoUsuario) //Al hacer esto apareceran las variables separadas por un espacio
+        const actualizaPerfil=({numUsuario,john:{edadUsuario:edadUsuario}})=>{console.log(numUsuario,edadUsuario)}
+        actualizaPerfil(usuario)        //desestructuramos un objeto pasado como parametro
 
         ///////////////enumeraciones
 
