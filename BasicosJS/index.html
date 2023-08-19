@@ -46,8 +46,12 @@
         }else if(decimal>25.1){
             console.log('es mayor')
         }else{
-            console.log('es mayor')
+            console.log('es mmenor')
         }
+        let z=2
+        let y=3
+        console.log(z<y? z : y ) //operador ternario
+
         let valor;
         switch(valor){
             case 1:
@@ -76,6 +80,12 @@
         }
         console.log(miFuncion())//podemos incluso llamar a la funcion antes de definirla
 
+        const fecha= () => new Date()   //funcion flecha, es basicamente una lambda
+        const sumarTres=(x)=>x+3
+        console.log(sumarTres(4))
+        const imprimir=(x)=>console.log(x)
+        imprimir('soy una lambda')
+        
         ////////////////////////listas
 
         let lista=['hola','adios',5, 3.4] //podemos combinar tipos de datos dentro de la lista, incluso otros arrays/listas
@@ -143,6 +153,7 @@
         delete perro.altura     //eliminamos el atributo
         console.log(perro)
         console.log(perro.hasOwnProperty('edad'))   //comprobamos si existe el atributo
+        Object.freeze(perro)    //congela el objeto evitando poder modificar cualquier atributo del objeto
 
         ///////////////enumeraciones
 
