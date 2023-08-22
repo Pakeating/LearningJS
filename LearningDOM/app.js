@@ -26,24 +26,40 @@ console.log(toppingsNaranja); // Retorna una Lista de Nodos
 console.log(toppingsNaranja[1]);
 */
 //CAMBIANDO ESTILOS DESDE JS
+/*
 const primerTopping=document.querySelector('.topping');
 primerTopping.style.backgroundColor='blue';
 primerTopping.style.color='#6dff00';
 primerTopping.style.textTransform='uppercase';
+*/
 // ACCEDIENDO AL TEXTO DEL HTML
+/*
 const listaToppings= document.getElementById('lista-toppings');
 console.log(listaToppings.innerText);
 console.log(listaToppings.textContent);
 console.log(listaToppings.innerHTML);
+*/
 //CAMBIANDO TEXTO HTML
+/*
 const titulo=document.getElementById('titulo');
 titulo.innerText='Mis ingredientes Favoritos';
+*/
 //MODIFICANDO ATRIBUTOS
+/*
 const enlace=document.getElementsByTagName('a');//como retorna una colleccion hay que acceder con el indice
 console.log(enlace[0].getAttribute('href'));
 enlace[0].setAttribute('href', 'https://www.facebook.com');
 enlace[0].removeAttribute('href');
+*/
 //CLASES
 
+const topping=document.querySelector('.topping');
+console.log(topping.classList);
+topping.classList.add('mi-clase');//en caso de que en el css este definida esta clase, se aplicaria el estilo
+console.log(topping.classList);
+console.log(topping.classList.contains('fondo-azul')); //retorna un booleano
+topping.classList.remove('mi-clase');
+
+//ELEMENTOS
 
 
