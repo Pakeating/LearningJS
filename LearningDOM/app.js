@@ -52,14 +52,20 @@ enlace[0].setAttribute('href', 'https://www.facebook.com');
 enlace[0].removeAttribute('href');
 */
 //CLASES
-
+/*
 const topping=document.querySelector('.topping');
 console.log(topping.classList);
 topping.classList.add('mi-clase');//en caso de que en el css este definida esta clase, se aplicaria el estilo
 console.log(topping.classList);
 console.log(topping.classList.contains('fondo-azul')); //retorna un booleano
 topping.classList.remove('mi-clase');
-
+*/
 //ELEMENTOS
 
-
+const listaToppings=document.getElementById('lista-toppings');
+const toppingNuevo=document.createElement('li');//creamos el elemento
+toppingNuevo.classList.add('topping', 'fondo-marron');//le asignamos las clases que le tocan
+toppingNuevo.innerText='Extra de Queso';
+listaToppings.append(toppingNuevo);//Situamos el elemento en su lugar correspondiente
+//tambien existe appendChild()
+toppingNuevo.remove(); //elimina el elemento
