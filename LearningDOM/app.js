@@ -69,3 +69,14 @@ toppingNuevo.innerText='Extra de Queso';
 listaToppings.append(toppingNuevo);//Situamos el elemento en su lugar correspondiente
 //tambien existe appendChild()
 toppingNuevo.remove(); //elimina el elemento
+
+//RECORRER DOM A TRAVES DE ELEMENTOS
+console.log(listaToppings.parentElement);
+console.log(listaToppings.parentElement.parentElement);
+console.log(listaToppings.children);
+console.log(listaToppings.children[0]);
+console.log(listaToppings.firstChild);//como retorna un nodo, es texto
+console.log(listaToppings.firstElementChild);//equivale a children[0]
+console.log(listaToppings.lastElementChild);
+console.log(listaToppings.previousElementSibling);//el elemento hermano inmediatamente anterior
+console.log(listaToppings.nextElementSibling);//el elemento hermano inmediatamente posterior
