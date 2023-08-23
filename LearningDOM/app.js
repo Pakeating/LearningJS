@@ -60,6 +60,7 @@ console.log(topping.classList);
 console.log(topping.classList.contains('fondo-azul')); //retorna un booleano
 topping.classList.remove('mi-clase');
 */
+/*
 //ELEMENTOS
 
 const listaToppings=document.getElementById('lista-toppings');
@@ -80,3 +81,22 @@ console.log(listaToppings.firstElementChild);//equivale a children[0]
 console.log(listaToppings.lastElementChild);
 console.log(listaToppings.previousElementSibling);//el elemento hermano inmediatamente anterior
 console.log(listaToppings.nextElementSibling);//el elemento hermano inmediatamente posterior
+*/
+//EVENTOS
+
+function mostrarClic(e){ //evento directamente desde html para algo sencillo
+    console.log(e.target.innerText);
+}
+const toppings=document.getElementsByClassName('topping');
+for(const topping of toppings){
+    topping.addEventListener('click',mostrarClic);
+}
+// con funciones pequennas podria hacerse tambien mediante una lambda: 
+/*
+for(const topping of toppings){
+    topping.addEventListener('click',(e)=>console.log(e.target.innerText))
+}
+*/
+
+
+
