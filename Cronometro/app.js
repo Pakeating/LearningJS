@@ -5,7 +5,7 @@ const botonReiniciar = document.getElementById('boton-reiniciar');
 
 let[hora, minutos, segundos]=[0,0,0];
 let intervaloTiempo;
-let estadoCronometo = 'pausado';
+let estadoCronometro = 'pausado';
 
 function actualizarCronometro(){
     segundos++
@@ -15,12 +15,12 @@ function actualizarCronometro(){
     
         if(minutos/60===1){
             minutos = 0;
-            horas++;
+            hora++;
         }
     }
 const segundosConFormato = asignarFormato(segundos);
 const minutosConFormato = asignarFormato(minutos);
-const horasConFormato = asignarFormato(horas);
+const horasConFormato = asignarFormato(hora);
 
 cronometro.innerText = `${horasConFormato}:${minutosConFormato}:${segundosConFormato}`;
 }
@@ -30,17 +30,19 @@ function asignarFormato(tiempo){
 }
 
 botonInicioPausa.addEventListener('click',function(){
-    if(estadoCronometo === 'pausado'){
+    if(estadoCronometro === 'pausado'){
         intervaloTiempo = window.setInterval(actualizarCronometro,1000);
         //son 1000ms, por lo que se llamara cada segundo
         botonInicioPausa.innerHTML = '<i class="bi bi-pause-btn-fill"></i>';
         botonInicioPausa.classList.remove('iniciar');
+        botonInicioPausa.classList.add('pausar');
         estadoCronometro = 'funcionando';
     } else{
         window.clearInterval(intervaloTiempo);
+        botonInicioPausa.innerHTML = '<i class="bi bi-play-fill">';
         botonInicioPausa.classList.remove('pausar');
         botonInicioPausa.classList.add('iniciar');
-        estadoCronometo('pausado');
+        estadoCronometro = 'pausado';
     }
 
 
